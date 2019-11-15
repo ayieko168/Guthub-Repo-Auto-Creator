@@ -60,7 +60,6 @@ class App(QMainWindow):
         self.ui.searchDirectoryButton.clicked.connect(self.searchDirectoryCMD)
         self.ui.createButton.clicked.connect(self.createRepoCMD)
 
-
     def searchDirectoryCMD(self):
 
         foundDirPath = QFileDialog.getExistingDirectory()
@@ -94,7 +93,6 @@ class App(QMainWindow):
         # Create the repository github API
         print("creating reop from github API")
         repodata = r'{"name":"***"}'.replace("***", reponame)
-        print("repodata = ", repodata)
         response = requests.post('https://api.github.com/user/repos', data=repodata, auth=(user, _pass))
         responceJson = response.json()
 
@@ -103,7 +101,7 @@ class App(QMainWindow):
         os.system(command)
         
         # print("responceJson = ", responceJson)
-        print("done.")
+        print("Done.\n\n")
 
     def getRepoDetails(self):
 
