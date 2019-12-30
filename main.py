@@ -1,5 +1,5 @@
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PyQt5.QtCore import *
+from PyQt5.QtWidgets import *
 from MainDesign import *
 from cridentialsDialog import *
 import requests, os
@@ -20,10 +20,10 @@ class CridentialsApp(QDialog):
 
         print("show pass")
         if self.crUi.passwordEntry.echoMode():  # if normal...
-            self.crUi.passwordEntry.setEchoMode(QtGui.QLineEdit.Normal)
+            self.crUi.passwordEntry.setEchoMode(QLineEdit.Normal)
             self.crUi.showButton.setText("hide")
         else:
-            self.crUi.passwordEntry.setEchoMode(QtGui.QLineEdit.Password)
+            self.crUi.passwordEntry.setEchoMode(QLineEdit.Password)
             self.crUi.showButton.setText("show")
 
 
